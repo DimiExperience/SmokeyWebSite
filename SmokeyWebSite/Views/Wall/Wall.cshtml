@@ -1,0 +1,74 @@
+﻿@model SmokeyWebSite.Models.WallModel
+
+@{
+    ViewBag.Title = "Wall";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts
+{
+    <script src="~/bootstrap-validator-master/dist/validator.min.js"></script>
+}
+
+<div class="container">
+    <div class="row">
+        <div class="box">
+            <div class="col-lg-12">
+                <hr>
+                <h2 class="intro-text text-center">
+                    Another Brick In The <strong>WALL</strong>
+                </h2>
+                <hr>
+            </div>
+
+            <div class="col-lg-12 text-center">
+                <h2>
+                    @ViewBag.MessageName
+                    <br>
+                    <small>@ViewBag.CurrentTime</small>    @*I KAKO SADA NAPRAVITI DA OSTAJE A NE SAMO JEDAN DA SE PRIKAZUJE??*@
+                </h2>
+                <p>
+                    @ViewBag.MessagePost
+                </p>
+            </div>
+            @*<div>
+                <h1 align="center">Posts should be here</h1>
+            </div>*@
+
+            <form role="form" method="post" data-toggle="validator">
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                        <label>Name</label>
+                        <input type="text" class="form-control" name="Name" id="inputName" data-minlength="4" data-error="Minimum 4 characters required" placeholder="Enter your name" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label for="inputEmail" class="control-label">Email Address</label>
+                        <input type="email" class="form-control" id="inputEmail" name="EmailAdress" placeholder="Enter your email" data-error="Enter valid email adress" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group col-lg-12">
+                        <label>Post</label>
+                        <textarea rows="6" class="form-control" name="Post" data-minlength="10" placeholder="Enter your message" data-error="10 characters minimum" required></textarea>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <input type="hidden" value="contact" name="save">
+                        <button class="btn btn-default" type="submit" value="Send Message">Submit</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="col-lg-12 text-center">
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="#">← Older</a>
+                    </li>
+                    <li class="next">
+                        <a href="#">Newer →</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

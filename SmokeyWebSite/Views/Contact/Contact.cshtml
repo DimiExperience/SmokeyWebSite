@@ -1,0 +1,81 @@
+﻿@model SmokeyWebSite.Models.ContactViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Contact Us";
+}
+@section Scripts
+{
+    <script src="~/bootstrap-validator-master/dist/validator.min.js"></script>
+}
+<div class="container">
+    <div class="row">
+        <div class="box">
+            <div class="col-lg-12">
+                <hr>
+                <h2 class="intro-text text-center">
+                    Contact <strong>SMOKEY</strong>
+                </h2>
+                <hr>
+            </div>
+            <div class="col-md-8">
+                <!-- Embedded Google Map using an iframe - to select your location find it
+                on Google maps and paste the link as the iframe src. If you want to use
+                    the Google Maps API instead then have at it! -->
+                <iframe width="100%" scrolling="no" height="400" frameborder="0" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.0521000937333!2d-73.9675437846643!3d40.78286874121401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2589a018531e3%3A0xb9df1f7387a94119!2sCentral+Park!5e0!3m2!1sen!2sus!4v1454786744640" marginwidth="0" marginheight="0"></iframe>
+            </div>
+            <div class="col-md-4">
+                <p>
+                    Phone: <strong>347.859.7743</strong>
+                </p>
+                <p>
+                    Email: <strong>stefan.dimi91@gmail.com</strong>
+                </p>
+                <p>
+                    Address: <strong>Central Perk<br>Central Park<br>New York, NY 10023</strong>
+                </p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="box">
+            <div class="col-lg-12">
+                <hr>
+                <h2 class="intro-text text-center">
+                    Contact <strong>US</strong>
+                </h2>
+                <hr>
+                <form role="form" method="post" data-toggle="validator">
+                    <div class="row">
+                        <div class="form-group col-lg-4">
+                            <label>Name</label>
+                            <input type="text" class="form-control" name="Name" id="inputName" data-minlength="4" data-error="Minimum 4 characters required" placeholder="Enter your name" required>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="inputEmail" class="control-label">Email Address</label>
+                            <input type="email" class="form-control" id="inputEmail" name="EmailAdress" placeholder="Enter your email" data-error="Enter valid email adress" required>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label>Phone Number</label>
+                            <input type="number" data-minlength="9" class="form-control" name="PhoneNumber" placeholder="Enter your phone number(not required)" data-error="Enter valid phone number">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="form-group col-lg-12">
+                            <label>Message</label>
+                            <textarea rows="6" class="form-control" name="Message" data-minlength="10" placeholder="Enter your message" data-error="10 characters minimum" required></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <input type="hidden" value="contact" name="save">
+                            <button class="btn btn-default" type="submit" value="Send Message">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
